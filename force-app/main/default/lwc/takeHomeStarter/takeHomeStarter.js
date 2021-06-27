@@ -26,9 +26,9 @@ export default class TakeHomeStarter extends LightningElement {
     data = [];
     columns = COLUMNS;
     
-    handleChange(type){
+    handlePercent(button){
 
-        if(type == "change")
+        if(button == "change")
         {
             changeCounter += 1;
             let total = changeCounter + machineCounter + changeMachineCounter;
@@ -37,7 +37,7 @@ export default class TakeHomeStarter extends LightningElement {
             this.percentMachine = Math.trunc(100 * (machineCounter / total));
             this.percentChangeMachine = Math.trunc(100 * (changeMachineCounter / total));
         }
-        else if(type == "machine"){
+        else if(button == "machine"){
 
             machineCounter += 1;
             let total = changeCounter + machineCounter + changeMachineCounter;
@@ -46,7 +46,7 @@ export default class TakeHomeStarter extends LightningElement {
             this.percentMachine = Math.trunc(100 * (machineCounter / total));
             this.percentChangeMachine = Math.trunc(100 * (changeMachineCounter / total));
         }
-        else if(type == "changeMachine"){
+        else if(button == "changeMachine"){
 
             changeMachineCounter += 1;
             let total = changeCounter + machineCounter + changeMachineCounter;
@@ -71,7 +71,7 @@ export default class TakeHomeStarter extends LightningElement {
                 this.error = error;
             });
 
-           this.handleChange("changeMachine");
+           this.handlePercent("changeMachine");
 
             let currentTime = new Date( new Date().getTime() + -4 * 3600 * 1000).toUTCString().replace( / GMT$/, " EST" )
 
@@ -88,7 +88,7 @@ export default class TakeHomeStarter extends LightningElement {
                 this.error = error;
             });
 
-            this.handleChange("change");
+            this.handlePercent("change");
 
             let currentTime = new Date( new Date().getTime() + -4 * 3600 * 1000).toUTCString().replace( / GMT$/, " EST" )
 
@@ -104,7 +104,7 @@ export default class TakeHomeStarter extends LightningElement {
                 this.error = error;
             });
 
-            this.handleChange("machine");
+            this.handlePercent("machine");
 
             let currentTime = new Date( new Date().getTime() + -4 * 3600 * 1000).toUTCString().replace( / GMT$/, " EST" )
 
