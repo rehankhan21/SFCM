@@ -3,14 +3,14 @@ public with sharing class ChangeMachineController {
 
     //TODO: Create your front-end reachable here 
 
-    public static void clickHis(String name){
+    public static void clickHistory(String name){
 
         Datetime dateToday = DateTime.now();
 
         try{
-            Click_History__c his = new Click_History__c(Button_Clicked__c = name, Click_Time__c = dateToday);
+            Click_History__c history = new Click_History__c(Button_Clicked__c = name, Click_Time__c = dateToday);
 
-            insert his;
+            insert history;
         }catch(DmlException e){
             System.debug('A DML exception has occurred: ' +
                 e.getMessage());
@@ -22,17 +22,17 @@ public with sharing class ChangeMachineController {
     public static String doChangeFunction(Boolean change, Boolean machine){
         try {
             if(change == true && machine == true){
-                clickHis('Change Machine');
+                clickHistory('Change Machine');
                 
                 return changeMachineFunction();
             }
             else if(change == true && machine == false){
-                clickHis('Change');
+                clickHistory('Change');
 
                 return changeFunction();
             }
             else if(machine == true && change == false){
-                clickHis('Machine');
+                clickHistory('Machine');
 
                 return machineFunction();
             }
