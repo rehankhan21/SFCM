@@ -76,7 +76,7 @@ export default class TakeHomeStarter extends LightningElement {
            this.handleChange("changeMachine");
 
             var offset = -4;
-            let currentTime = new Date( new Date().getTime() + offset * 3600 * 1000).toUTCString().replace( / GMT$/, "" )
+            let currentTime = new Date( new Date().getTime() + offset * 3600 * 1000).toUTCString().replace( / GMT$/, " EST" )
 
             this.data = [{time: currentTime, buttonClicked: event.target.label}, ...this.data];
 
@@ -94,7 +94,7 @@ export default class TakeHomeStarter extends LightningElement {
             this.handleChange("change");
 
             var offset = -4;
-            let currentTime = new Date( new Date().getTime() + offset * 3600 * 1000).toUTCString().replace( / GMT$/, "" )
+            let currentTime = new Date( new Date().getTime() + offset * 3600 * 1000).toUTCString().replace( / GMT$/, " EST" )
 
             this.data = [{time: currentTime, buttonClicked: event.target.label}, ...this.data];
         }
@@ -111,7 +111,7 @@ export default class TakeHomeStarter extends LightningElement {
             this.handleChange("machine");
 
             var offset = -4;
-            let currentTime = new Date( new Date().getTime() + offset * 3600 * 1000).toUTCString().replace( / GMT$/, "" )
+            let currentTime = new Date( new Date().getTime() + offset * 3600 * 1000).toUTCString().replace( / GMT$/, " EST" )
 
             this.data = [{time: currentTime, buttonClicked: event.target.label}, ...this.data];
         }

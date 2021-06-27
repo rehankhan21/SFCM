@@ -40,7 +40,7 @@ public with sharing class ChangeMachineController {
             throw new AuraHandledException(e.getMessage());
         }
 
-        return changeFunction();
+        return null;
     }
     
     
