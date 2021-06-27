@@ -6,9 +6,7 @@ let changeCounter = 0;
 let machineCounter = 0;
 let changeMachineCounter = 0;
 
-
-
-const columns = [
+const COLUMNS = [
     { label: 'Time', fieldName: 'time'},
     { label: 'ButtonClicked', fieldName: 'buttonClicked'}
 ];
@@ -26,7 +24,7 @@ export default class TakeHomeStarter extends LightningElement {
 
     @track
     data = [];
-    columns = columns;
+    columns = COLUMNS;
     
     handleChange(type){
 
@@ -75,8 +73,7 @@ export default class TakeHomeStarter extends LightningElement {
 
            this.handleChange("changeMachine");
 
-            var offset = -4;
-            let currentTime = new Date( new Date().getTime() + offset * 3600 * 1000).toUTCString().replace( / GMT$/, " EST" )
+            let currentTime = new Date( new Date().getTime() + -4 * 3600 * 1000).toUTCString().replace( / GMT$/, " EST" )
 
             this.data = [{time: currentTime, buttonClicked: event.target.label}, ...this.data];
 
@@ -93,8 +90,7 @@ export default class TakeHomeStarter extends LightningElement {
 
             this.handleChange("change");
 
-            var offset = -4;
-            let currentTime = new Date( new Date().getTime() + offset * 3600 * 1000).toUTCString().replace( / GMT$/, " EST" )
+            let currentTime = new Date( new Date().getTime() + -4 * 3600 * 1000).toUTCString().replace( / GMT$/, " EST" )
 
             this.data = [{time: currentTime, buttonClicked: event.target.label}, ...this.data];
         }
@@ -110,8 +106,7 @@ export default class TakeHomeStarter extends LightningElement {
 
             this.handleChange("machine");
 
-            var offset = -4;
-            let currentTime = new Date( new Date().getTime() + offset * 3600 * 1000).toUTCString().replace( / GMT$/, " EST" )
+            let currentTime = new Date( new Date().getTime() + -4 * 3600 * 1000).toUTCString().replace( / GMT$/, " EST" )
 
             this.data = [{time: currentTime, buttonClicked: event.target.label}, ...this.data];
         }
