@@ -3,6 +3,9 @@ public with sharing class ChangeMachineController {
 
     //TODO: Create your front-end reachable here 
 
+    // Takes String of Button clicked as param
+    // Creates a new custom sOb
+    // Record contains name of button clicked and the time the button was clicked
     public static void clickHistory(String name){
 
         Datetime dateToday = DateTime.now();
@@ -18,6 +21,9 @@ public with sharing class ChangeMachineController {
     }
 
 
+    // Takes two Boolean values as Params
+    // checks to see if the Booleans are true or false
+    // returns the appropriate fucntion accordingly.
     @AuraEnabled(cacheable=false)
     public static String doChangeFunction(Boolean change, Boolean machine){
         try {
