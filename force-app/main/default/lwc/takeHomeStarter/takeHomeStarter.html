@@ -1,0 +1,62 @@
+<template>
+    <div class="dashboard slds-box slds-theme_default slds-grid slds-grid_align-space">
+        <span class="slds-col slds-size_1-of-3">{percentChange}%</span>
+        <span class="slds-col slds-size_1-of-3">{percentMachine}%</span>
+        <span class="slds-col slds-size_1-of-3">{percentChangeMachine}%</span>
+    </div>
+
+    <!-- <div class="slds-box slds-grid_align-spread">
+        <span class="slds-size_1-of-3">{percentChange}%</span>
+        <span class="slds-align">{percentMachine}%</span>
+        <span class="slds-size_1-of-3">{percentChangeMachine}%</span>
+    </div> -->
+
+    <div style="height: 300px;">
+         <lightning-datatable
+                 key-field="id"
+                 data={data}
+                 columns={columns}>
+         </lightning-datatable>
+     </div>    
+    
+    <div class="slds-grid slds-box slds-theme_default">
+        <!-- <div class="slds-text-heading_small slds-m-bottom_small ">
+            Click the buttons to activate the <code>onclick</code> handler and view the label of the clicked button.
+        </div> -->
+
+        <!-- Brand variant: Identifies the primary action in a group of buttons -->
+        <span class="slds-col">
+            <lightning-button variant="brand" label="Change" title="Primary action" onclick={handleClick} class="slds-m-left_x-small slds-is-selected"></lightning-button>
+        </span>
+
+        <span class="slds-col">
+            <lightning-button variant="brand" label="Machine" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+        </span>
+        
+        <span class="slds-col">
+            <lightning-button variant="brand" label="Change Machine" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+        </span>
+       
+    </div>
+
+    <!-- <span class="slds-clearfix">
+        <span class="slds-float_left">
+            <lightning-button variant="brand" label="Change" title="Primary action" onclick={handleClick} class="slds-m-left_x-small slds-is-selected"></lightning-button>
+        </span>
+    </span>
+    <span class="slds-clearfix">
+        <span class="slds-align_absolute-center">
+            <lightning-button variant="brand" label="Machine" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+        </span>
+    </span>
+
+    <span class="slds-clearfix">
+        <span class="slds-float_right">
+            <lightning-button variant="brand" label="Change Machine" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+        </span>
+    </span> -->
+
+    <div class="slds-m-vertical_medium slds-box slds-theme_default">
+        <p>The button that was clicked is: <span class="slds-text-heading_small">{clickedButtonLabel}</span></p>
+    </div>
+</template>
