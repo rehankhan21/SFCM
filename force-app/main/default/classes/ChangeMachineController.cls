@@ -4,7 +4,7 @@ public with sharing class ChangeMachineController {
     //TODO: Create your front-end reachable here 
 
     // Takes String of Button clicked as param
-    // Creates a new custom sOb
+    // Creates a new custom sObject
     // Record contains name of button clicked and the time the button was clicked
     public static void clickHistory(String name){
 

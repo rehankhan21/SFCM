@@ -2,10 +2,12 @@ import { LightningElement, wire, track } from 'lwc';
 
 import doChangeFunction from '@salesforce/apex/ChangeMachineController.doChangeFunction'
 
+// Counter varaibles to calculate button click percentage
 let changeCounter = 0;
 let machineCounter = 0;
 let changeMachineCounter = 0;
 
+// Columns for lightning data table
 const COLUMNS = [
     { label: 'Time', fieldName: 'time'},
     { label: 'ButtonClicked', fieldName: 'buttonClicked'}
@@ -15,17 +17,17 @@ export default class TakeHomeStarter extends LightningElement {
 
     clickedButtonLabel;
 
-    //Wire a method to a property, when method is invoked the result is automatically assigned to
-    // @wire(doChange)
-    // doChange;
     percentChange;
     percentMachine;
     percentChangeMachine;
 
+    // Assigning the lightning data table properties
     @track
     data = [];
     columns = COLUMNS;
     
+    // Takes String as Param containing the button label
+    // Calculates button clicked percentage
     handlePercent(button){
 
         if(button == "change")
@@ -59,6 +61,9 @@ export default class TakeHomeStarter extends LightningElement {
 
     }
 
+    // Handles the on click event
+    // Returns value from Apex class depending on which button was clicked
+    // Reassigns the record value for the lightning data table with the new button that was clicked
     handleClick(event) {
 
         if(event.target.label == "Change Machine"){
