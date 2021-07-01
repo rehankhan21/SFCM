@@ -1,3 +1,7 @@
+# Description
+
+Developed a Full-Stack Salesforce application using Lightning Web Components(LWC) and Apex Programming Language. This application utilizes Imperative Apex to connect the frontend LWCs with the backend Apex methods. These methods create instances of  a custom salesforce object, to save those records and display them on a table in a Salesforce Organization.
+
 # Salesforce DX Project: Next Steps
 
 Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
